@@ -1,0 +1,11 @@
+{
+	"blog": {
+		"name": "Sweet Ass Dogs",
+		"slogan": "All about the animal kingdom"
+	},
+	"author": {
+		"name": "Me",
+		"email": "me@example.org",
+		"github": "https://github.com/torvalds"
+	}
+}

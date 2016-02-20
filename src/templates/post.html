@@ -1,0 +1,44 @@
+{{> header }}
+
+<header class="banner">
+<div class="background" style="background-color: #2c91b4"></div>
+    <div>
+        <a href="/" class="button back">←</a>
+        <section>
+            <h1>
+                {{ title }}
+            </h1>
+        </section>
+    </div>
+</header>
+
+<main>
+
+<article class="single post">
+
+        <header class="post-header">
+        </header>
+
+        <section class="post-content">
+          {{{ content }}}
+        </section>
+
+        <section class="post-meta bottom">
+            <div>
+                <span>Author</span>
+                <p>{{ settings.author.name }}</p>
+            </div>
+            <div>
+                <span>Share</span>
+                <p class="social">
+                    {{#if settings.author.facebook }}<a href="{{ settings.author.facebook }}"><i class="fi-social-facebook"></i></a>{{/if}}
+                    {{#if settings.author.github }}<a href="{{ settings.author.github }}"><i class="fi-social-github"></i></a>{{/if}}
+                    {{#if settings.author.twitter }}<a href="{{ settings.author.twitter }}"><i class="fi-social-twitter"></i></a>{{/if}}
+                    {{#if settings.author.instagram }}<a href="{{ settings.author.instagram }}"><i class="fi-social-instagram"></i></a>{{/if}}
+                </p>
+            </div>
+        </section>
+
+    </article>
+
+{{> footer }}

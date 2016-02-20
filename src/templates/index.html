@@ -1,0 +1,49 @@
+{{> header }}
+
+<header class="banner">
+<div class="background" style="background-color: #2c91b4"></div>
+    <div>
+        <section>
+            <h1>
+                <span>{{ settings.blog.name }}</span><br>
+                {{ settings.blog.slogan }}
+            </h1>
+            <a href="mailto:{{ settings.authorEmail }}?subject=I%27ve%20got%20the%20greatest%20idea" class="button of-doom">{{ button }}</a>
+        </section>
+    </div>
+</header>
+
+<main>
+
+{{#each posts}}
+	{{#if featured }}
+		<article class="post featured">
+		    <header class="post-header">
+		        <h2 class="post-title">{{ title }}</h2>
+		    </header>
+		    <section class="post-content">
+		        {{{ content }}}
+		    </section>
+		</article>
+	{{/if}}
+{{/each}}
+
+{{#each posts}}
+	{{#unless featured }}
+	 <article class="post">
+	    <header class="post-header">
+	        <section class="post-meta">
+	            <time class="post-date" datetime="{{ date }}">{{ date }}</time>  
+	        </section>
+	        <h2 class="post-title"><a href="posts/{{ slug }}.html">{{ title }}</a></h2>
+	    </header>
+	    <section class="post-excerpt">
+	        <p>
+	        	{{ excerpt }}
+	        </p>
+	    </section>
+	</article>
+	{{/unless}}
+{{/each}}
+
+{{> footer }}
