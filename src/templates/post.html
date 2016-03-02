@@ -1,34 +1,29 @@
-{{> header }}
+{{> head }}
 
-<header class="banner">
-<div class="background" style="background-color: #2c91b4"></div>
-    <div>
-        <a href="/" class="button back">←</a>
-        <section>
-            <h1>
-                {{ title }}
-            </h1>
-        </section>
+<header class="header">
+<div class="header__background" style="background-color: #333"></div>
+    <div class="header__inner">
+        <a href="/" class="button">←</a>
+        <h1 class="header__title">
+            {{ title }}
+        </h1>
     </div>
 </header>
 
 <main>
 
-<article class="single post">
+<article class="single">
 
-        <header class="post-header">
-        </header>
-
-        <section class="post-content">
+        <div class="single__content">
           {{{ content }}}
-        </section>
+        </div>
 
-        <section class="post-meta bottom">
-            <div>
+        <div class="single__footer">
+            <div class="single__meta">
                 <span>Author</span>
                 <p>{{ settings.author.name }}</p>
             </div>
-            <div>
+            <div class="single__share">
                 <span>Share</span>
                 <p class="social">
                     {{#if settings.author.facebook }}<a href="{{ settings.author.facebook }}"><i class="fi-social-facebook"></i></a>{{/if}}
@@ -37,8 +32,10 @@
                     {{#if settings.author.instagram }}<a href="{{ settings.author.instagram }}"><i class="fi-social-instagram"></i></a>{{/if}}
                 </p>
             </div>
-        </section>
+        </div>
 
     </article>
+
+</main>
 
 {{> footer }}

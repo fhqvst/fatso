@@ -1,49 +1,48 @@
-{{> header }}
+{{> head }}
 
-<header class="banner">
-<div class="background" style="background-color: #2c91b4"></div>
-    <div>
-        <section>
-            <h1>
-                <span>{{ settings.blog.name }}</span><br>
-                {{ settings.blog.slogan }}
+<header class="header">
+<div class="header__background" style="background-color: #{{ background-color }}"></div>
+        <div class="header__inner">
+            <h1 class="header__title">
+                {{ settings.blog.name }}
             </h1>
-            <a href="mailto:{{ settings.authorEmail }}?subject=I%27ve%20got%20the%20greatest%20idea" class="button of-doom">{{ button }}</a>
-        </section>
-    </div>
+            <p class="header__subtitle">
+            	{{ settings.blog.slogan }}
+            </p>
+            <a href="mailto:{{ settings.authorEmail }}" class="header__button">{{ button }}</a>
+        </div>
 </header>
 
-<main>
+<main class="main">
 
 {{#each posts}}
 	{{#if featured }}
-		<article class="post featured">
-		    <header class="post-header">
-		        <h2 class="post-title">{{ title }}</h2>
-		    </header>
-		    <section class="post-content">
+		<article class="post post--featured">
+	        <h2 class="post__title">{{ title }}</h2>
+		    <div class="post__excerpt">
 		        {{{ content }}}
-		    </section>
+		    </div>
 		</article>
 	{{/if}}
 {{/each}}
 
 {{#each posts}}
 	{{#unless featured }}
-	 <article class="post">
-	    <header class="post-header">
-	        <section class="post-meta">
-	            <time class="post-date" datetime="{{ date }}">{{ date }}</time>  
-	        </section>
-	        <h2 class="post-title"><a href="posts/{{ slug }}.html">{{ title }}</a></h2>
-	    </header>
-	    <section class="post-excerpt">
-	        <p>
-	        	{{ excerpt }}
-	        </p>
-	    </section>
-	</article>
+		 <article class="post">
+	        <div class="post__meta">
+	            <time class="post__date" datetime="{{ date }}">{{ date }}</time>  
+	        </div>
+	        <h2 class="post__title">
+	        	<a href="posts/{{ slug }}.html">{{ title }}</a>
+	    	</h2>
+		    <div class="post__excerpt">
+		        <p>
+		        	{{ excerpt }}
+		        </p>
+		    </div>
+		</article>
 	{{/unless}}
 {{/each}}
+</main>
 
 {{> footer }}
