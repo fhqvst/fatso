@@ -14,35 +14,36 @@
 </header>
 
 <main class="main">
+	<div class="main__inner">
+		{{#each posts}}
+			{{#if featured }}
+				<article class="post post--featured">
+			        <h2 class="post__title">{{ title }}</h2>
+				    <div class="post__excerpt">
+				        {{{ content }}}
+				    </div>
+				</article>
+			{{/if}}
+		{{/each}}
 
-{{#each posts}}
-	{{#if featured }}
-		<article class="post post--featured">
-	        <h2 class="post__title">{{ title }}</h2>
-		    <div class="post__excerpt">
-		        {{{ content }}}
-		    </div>
-		</article>
-	{{/if}}
-{{/each}}
-
-{{#each posts}}
-	{{#unless featured }}
-		 <article class="post">
-	        <div class="post__meta">
-	            <time class="post__date" datetime="{{ date }}">{{ date }}</time>  
-	        </div>
-	        <h2 class="post__title">
-	        	<a href="posts/{{ slug }}.html">{{ title }}</a>
-	    	</h2>
-		    <div class="post__excerpt">
-		        <p>
-		        	{{ excerpt }}
-		        </p>
-		    </div>
-		</article>
-	{{/unless}}
-{{/each}}
+		{{#each posts}}
+			{{#unless featured }}
+				 <article class="post">
+			        <div class="post__meta">
+			            <time class="post__date" datetime="{{ date }}">{{ date }}</time>  
+			        </div>
+			        <h2 class="post__title">
+			        	<a href="posts/{{ slug }}.html">{{ title }}</a>
+			    	</h2>
+				    <div class="post__excerpt">
+				        <p>
+				        	{{ excerpt }}
+				        </p>
+				    </div>
+				</article>
+			{{/unless}}
+		{{/each}}
+	</div>
 </main>
 
 {{> footer }}

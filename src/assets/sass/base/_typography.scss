@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Yantramanav:500);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+
+body {
+	font-family: $primary-font;
+	font-size: 2.0rem;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+	font-family: $secondary-font;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 3.6rem;
+}
+
+h3 {
+	font-size: 2.4rem;
+}
+
+h4 {
+	font-size: 2.0rem;
+}
+
+h5 {
+	font-size: 1.6rem;
+}
+
+h6 {
+	font-size: 1.2rem;
+}
+
+p {
+	line-height: 1.5;
+}

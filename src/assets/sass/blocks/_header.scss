@@ -1,0 +1,10 @@
+.header {
+	background: $blue;
+}
+
+.header__inner {
+	margin: 0 auto;
+	max-width: 64rem;
+	text-align: center;
+	padding: $spacing-xl 0;
+}

@@ -1,1 +1,13 @@
-@import 'reset';
+@import 'base/reset',
+		'base/settings',
+		'base/typography',
+		'base/buttons',
+		'base/general';
+
+@import 'blocks/header',
+		'blocks/footer',
+		'blocks/main',
+		'blocks/posts';
+
+@import 'views/index',
+		'views/single';
